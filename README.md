@@ -1,0 +1,1 @@
+# Kutano.Cqrs.Contracts
