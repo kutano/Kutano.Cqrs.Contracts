@@ -37,7 +37,7 @@ test:
     - '**\*.Tests.dll'
 artifacts:
   - path: '**\Kutano.Cqrs.Contracts*.nupkg'
-  - path: '**\bin\$(configuration)'
+  - path: '**\bin\*.*'
     name: Kutano.Cqrs.Contracts
 
 deploy:
