@@ -1,0 +1,47 @@
+version: "{build}"
+branches:
+  only:
+    - master
+
+skip_commits:
+  files:
+  - LICENCE
+  - '**/*.md'
+
+configuration: Release
+
+before_build:
+  - nuget restore
+
+init:
+  - ps: $revision = ([math]::round([int](Get-Date -format hhmmssfff) * 65534 / 235959999,0))
+  - ps: Update-AppveyorBuild -Version "$(Get-Date -format yyyy.MM.dd).$revision"
+
+assembly_info:
+  patch: true
+  file: AssemblyInfo.*
+  assembly_version: "{version}"
+  assembly_file_version: "{version}"
+  assembly_informational_version: "{version}"
+
+build:
+  parallel: true
+  project: Kutano.Cqrs.Contracts.sln
+  verbosity: normal
+  publish_nuget: true
+  publish_nuget_symbols: true
+  include_nuget_references: true
+
+test:
+  assemblies:
+    - '**\*.Tests.dll'
+artifacts:
+  - path: '**\Kutano.Cqrs.Contracts*.nupkg'
+  - path: '**\bin\$(configuration)'
+    name: Kutano.Cqrs.Contracts
+
+deploy:
+  - provider: NuGet
+    api_key:
+      secure: Q2hJFEeqrUehSpHDaHo62+1e/woJ20wsEyio7rh6sMp1ud4Ua7qHE1pdp8ZqX6un
+    artifact: /.*\.nupkg/

@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<package >
+  <metadata>
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$id$ - $description$</title>
+    <authors>$author$</authors>
+    <owners>$author$</owners>
+    <licenseUrl>https://github.com/kutano/Kutano/blob/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/kutano/kutano</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/kutano/kutano.github.io/master/kutano.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>$description$</description>
+    <copyright>Copyright © 2016 $author$</copyright>
+    <tags>Kutano Cqrs Command Query Responsibility Segregation Contracts</tags>
+    <dependencies>
+    </dependencies>
+  </metadata>
+</package>
