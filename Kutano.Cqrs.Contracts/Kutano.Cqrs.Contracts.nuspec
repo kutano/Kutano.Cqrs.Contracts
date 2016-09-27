@@ -10,10 +10,20 @@
     <projectUrl>https://github.com/kutano/kutano</projectUrl>
     <iconUrl>https://raw.githubusercontent.com/kutano/kutano.github.io/master/kutano.png</iconUrl>
     <requireLicenseAcceptance>false</requireLicenseAcceptance>
-    <description>$description$</description>
+    <summary>$description$ ($id$.dll)</summary>
+    <description>$description$ ($id$.dll)</description>
     <copyright>Copyright © 2016 $author$</copyright>
     <tags>Kutano Cqrs Command Query Responsibility Segregation Contracts</tags>
     <dependencies>
+      <group targetFramework="netstandard1.0">
+        <dependency id="NETStandard.Library" version="1.6.0" />
+      </group>
+      <group targetFramework="portable-net45+win8+wp8+wpa81" />
     </dependencies>
   </metadata>
+  <files>
+    <file src="$id$\bin\Release\netstandard1.0\$id$.dll" target="lib\netstandard1.0\" />
+    <file src="$id$\bin\Release\netstandard1.0\$id$.pdb" target="lib\netstandard1.0\" />
+    <file src="$id$\bin\Release\netstandard1.0\$id$.xml" target="lib\netstandard1.0\" />
+  </files>
 </package>
